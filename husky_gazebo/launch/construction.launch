@@ -1,0 +1,589 @@
+<?xml version="1.0"?>
+<!--
+Software License Agreement (BSD)
+
+\file      husky_playpen.launch
+\authors   Paul Bovbel <pbovbel@clearpathrobotics.com
+\copyright Copyright (c) 2015, Clearpath Robotics, Inc., All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that
+the following conditions are met:
+ * Redistributions of source code must retain the above copyright notice, this list of conditions and the
+   following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
+   following disclaimer in the documentation and/or other materials provided with the distribution.
+ * Neither the name of Clearpath Robotics nor the names of its contributors may be used to endorse or promote
+   products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WAR-
+RANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, IN-
+DIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+<launch>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find husky_gazebo)/worlds/construction_world.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+<!--
+  <node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find u005-v2)/urdf/u005-v2.urdf -urdf -model u005-v2 -x -10 -y -10 -z 0.05"
+    output="screen" />
+-->
+
+
+<!--
+ <group ns="robot1">
+    <param name="tf_prefix" value="robot1_tf" />
+<node
+    name="spawn_fire_3"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find fire)/urdf/fire.urdf -urdf -model fire -x 10 -y 9 "
+    respawn="false" output="screen" />
+
+</group>
+-->
+
+ <group ns="robot2">
+    <param name="tf_prefix" value="robot2_tf" />
+<node
+    name="spawn_fire_2"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find fire)/urdf/fire.urdf -urdf -model fire_2 -x 4 -y -5 "
+    respawn="false" output="screen" />
+
+</group>
+
+ <group ns="robot3">
+    <param name="tf_prefix" value="robot3_tf" />
+<node
+    name="spawn_fire_3"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find fire)/urdf/fire.urdf -urdf -model fire_3 -x -4 -y -5 "
+    respawn="false" output="screen" />
+</group> 
+
+<!--
+ <group ns="robot3">
+<node
+    name="spawn_sink_1"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find sink)/urdf/sink.urdf -urdf -model sink -x 30 -y 3.4 -z 0.1 -Y -2.3 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group> 
+-->
+
+<!--
+<group ns="robot4">
+<node
+    name="spawn_sink_2"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find sink)/urdf/sink.urdf -urdf -model sink_2 -x 32.6 -y 6.2 -z 0.1 -Y -2.3 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group> 
+-->
+
+
+<!--
+<group ns="robot5">
+<node
+    name="spawn_main_stair"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find main_stair)/urdf/main_stair.urdf -urdf -model main_stair -x 3.8 -y 1.4 -z 0.049 -Y -1.57 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group> 
+-->
+
+<!--
+<group ns="robot6">
+<node
+    name="spawn_stair_v2"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find stair_v2)/urdf/stair_v2.urdf -urdf -model stair_v2 -x 11 -y -2.34 -z 0.05 -Y 3.14 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group> 
+-->
+
+<!--
+<group ns="robot7">
+<node
+    name="cupboard_01"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find cupboard)/urdf/cupboard.urdf -urdf -model cupboard_01 -x -4.8 -y -7.8 -z 0.1 -Y 3.14 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group> 
+-->
+
+<!--
+<group ns="robot8">
+<node
+    name="cupboard_02"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find cupboard)/urdf/cupboard.urdf -urdf -model cupboard_02 -x 4.3 -y -7.5 -z 0.1 -Y 1.57 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group> 
+-->
+
+<!--
+<group ns="robot9">
+<node
+    name="cupboard_03"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find cupboard)/urdf/cupboard.urdf -urdf -model cupboard_03 -x 4.8 -y 9.6 -z 0.1 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group> 
+-->
+
+<!--
+<group ns="robot10">
+<node
+    name="cupboard_04"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find cupboard)/urdf/cupboard.urdf -urdf -model cupboard_04 -x 23.5 -y 14 -z 0.1 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group> 
+-->
+
+<!--
+<group ns="robot11">
+<node
+    name="cupboard_05"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find cupboard)/urdf/cupboard.urdf -urdf -model cupboard_05 -x 25 -y 14 -z 0.1 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group> 
+-->
+
+<!--
+<group ns="robot12">
+<node
+    name="workbrench01"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find Work_brench)/urdf/Work_brench.urdf -urdf -model work_brench_01 -x 24 -y 11.5 -z 0.1 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group> 
+-->
+
+<!--
+<group ns="robot13">
+<node
+    name="workbrench02"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find Work_brench)/urdf/Work_brench.urdf -urdf -model work_brench_02 -x 26.5 -y 11.5 -z 0.1 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group> 
+-->
+
+<!--
+<group ns="robot14">
+<node
+    name="workbrench03"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find Work_brench)/urdf/Work_brench.urdf -urdf -model work_brench_03 -x 29 -y 11.5 -z 0.1 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group> 
+-->
+
+<group ns="robot15">
+<node
+    name="chair01"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find chair)/urdf/chair.urdf -urdf -model chair01 -x -4.3 -y -5.7 -z 0.05 -Y -1.57 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group> 
+
+<group ns="robot16">
+<node
+    name="chair02"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find chair)/urdf/chair.urdf -urdf -model wheel_borrow -x -3.8 -y -6.7 -z 0.05 -Y -1.57 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group>
+
+<!--
+<group ns="robot17">
+<node
+    name="wheel_01"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find wheel_borrow_2)/urdf/wheel_borrow_2.urdf -urdf -model wheel_01 -x 27 -y 8 -z 0.05 -Y -1 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group>
+
+
+<group ns="robot18">
+<node
+    name="wheel_02"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find wheel_borrow_2)/urdf/wheel_borrow_2.urdf -urdf -model wheel_02 -x 28.9 -y 5.7 -z 0.05 -Y 1.57 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group>
+
+<group ns="robot19">
+<node
+    name="wheel_03"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find wheel_borrow_2)/urdf/wheel_borrow_2.urdf -urdf -model wheel_03 -x 31.7 -y 7.3 -z 0.05 -Y 0.57 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group>
+
+<group ns="robot20">
+<node
+    name="wheel_04"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find wheel_borrow_2)/urdf/wheel_borrow_2.urdf -urdf -model wheel_04 -x 30 -y 7.85 -z 0.05 -Y -2.57 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group>
+
+
+<group ns="robot21">
+<node
+    name="wheel_05"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find wheel_borrow_2)/urdf/wheel_borrow_2.urdf -urdf -model wheel_05 -x 28 -y 9 -z 0.05 -Y -0.57 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group>
+
+<group ns="robot22">
+<node
+    name="wheel_06"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find wheel_borrow_2)/urdf/wheel_borrow_2.urdf -urdf -model wheel_06 -x 27 -y 5 -z 0.05 -Y -1.57 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group>
+-->
+
+<!--
+<group ns="robot23">
+<node
+    name="sink_2"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find sink-2)/urdf/sink-2.urdf -urdf -model sink-2 -x 24.6 -y 1.3 -z 0.05 -Y -2.356 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group>
+-->
+
+<!--
+<group ns="robot24">
+<node
+    name="workbrench04"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find Work_brench)/urdf/Work_brench.urdf -urdf -model work_brench_04 -x 24.4 -y 3 -z 0.1 -Y -0.78 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group> 
+-->
+
+
+<group ns="robot25">
+<node
+    name="bin_2_01"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find bin_2)/urdf/bin_2.urdf -urdf -model bin_2_01 -x 22.6 -y -0.75 -z 0.1 -Y -0.78 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group> 
+
+<!--
+<group ns="robot26">
+<node
+    name="workbrench05"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find Work_brench)/urdf/Work_brench.urdf -urdf -model work_brench_05 -x 20.13 -y -2.27 -z 0.1 -Y 0.6 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group> 
+-->
+
+<!--
+<group ns="robot27">
+<node
+    name="workbrench06"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find Work_brench)/urdf/Work_brench.urdf -urdf -model work_brench_06 -x 18.3 -y -3.37 -z 0.1 -Y 0.52 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group> 
+-->
+
+<!--
+<group ns="robot28">
+<node
+    name="workbrench07"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find Work_brench)/urdf/Work_brench.urdf -urdf -model work_brench_07 -x 16.47 -y -4.37 -z 0.1 -Y 0.44 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group>
+-->
+
+<!--
+<group ns="robot29">
+<node
+    name="workbrench08"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find Work_brench)/urdf/Work_brench.urdf -urdf -model work_brench_08 -x 14.64 -y -5.17 -z 0.1 -Y 0.36 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group>
+-->
+
+<group ns="robot30">
+<node
+    name="bin-1-01"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find bin-1)/urdf/bin-1.urdf -urdf -model bin-1-1 -x 27.5 -y 1.84 -z 0.1 -Y 2.35 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group>
+
+
+<group ns="robot31">
+<node
+    name="rack_01"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find rack)/urdf/rack.urdf -urdf -model rack_01 -x 25.3 -y 3.5 -z 0.05 -Y -0.79 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group>
+
+
+<group ns="robot32">
+<node
+    name="building_01"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find building)/urdf/building.urdf -urdf -model building_01 -x 31.5 -y 9.5 -z 0.1 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" /> 
+</group> 
+
+<!--
+<group ns="robot33">
+<node
+    name="wood_table_01"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find wood_table)/urdf/wood_table.urdf -urdf -model wood_table_01 -x -4.7 -y 2.3 -z 0.05 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" /> 
+</group> 
+-->
+
+<!--
+<group ns="robot34">
+<node
+    name="wood_table_02"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find wood_table)/urdf/wood_table.urdf -urdf -model wood_table_02 -x -3.1 -y 2.3 -z 0.05 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" /> 
+</group> 
+-->
+
+<!--
+<group ns="robot35">
+<node
+    name="wood_table_03"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find wood_table)/urdf/wood_table.urdf -urdf -model wood_table_03 -x -6.8 -y 6.8 -z 0.05 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" /> 
+</group> 
+-->
+
+<!--
+<group ns="robot36">
+<node
+    name="wood_table_04"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find wood_table)/urdf/wood_table.urdf -urdf -model wood_table_04 -x -6.8 -y 9 -z 0.05 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" /> 
+</group> 
+-->
+
+<!--
+<group ns="robot37">
+<node
+    name="wood_table_05"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find wood_table)/urdf/wood_table.urdf -urdf -model wood_table_05 -x -6.8 -y 11.2 -z 0.05 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" /> 
+</group>
+-->
+
+<!--
+<group ns="robot38">
+<node
+    name="wood_table_06"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find wood_table)/urdf/wood_table.urdf -urdf -model wood_table_06 -x -2.7 -y 6.8 -z 0.05 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" /> 
+</group>
+-->
+
+<!--
+<group ns="robot39">
+<node
+    name="wood_table_07"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find wood_table)/urdf/wood_table.urdf -urdf -model wood_table_07 -x -2.7 -y 9 -z 0.05 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" /> 
+</group>
+-->
+
+<!--
+<group ns="robot40">
+<node
+    name="wood_table_08"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find wood_table)/urdf/wood_table.urdf -urdf -model wood_table_08 -x -2.7 -y 11.2 -z 0.05 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" /> 
+</group>
+-->
+<!--
+<group ns="robot41">
+<node
+    name="house_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find house_model_v3)/urdf/house_model_v3.urdf -urdf -model house_model -x 23.3 -y 4.66 -z 0.05 -Y 3.14 -R 0 -P 0"
+    respawn="false" output="screen" /> 
+</group>
+-->
+
+<!--
+<group ns="robot42">
+<node
+    name="building_02"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find building_02)/urdf/building_02.urdf -urdf -model building_02 -x 11 -y -6.5 -z 0.05 -Y 1.57 -R 0 -P 0"
+    respawn="false" output="screen" /> 
+</group>
+-->
+
+<group ns="robot43">
+<node
+    name="storage_box_01"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find storage_box)/urdf/storage_box.urdf -urdf -model storage_box_01 -x 17 -y 10 -z 0.05 -Y 0.88 -R 0 -P 0"
+    respawn="false" output="screen" /> 
+</group>
+
+<group ns="robot44">
+<node
+    name="storage_box_02"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find storage_box)/urdf/storage_box.urdf -urdf -model storage_box_02 -x 21.5 -y 14.5 -z 0.05 -Y 2.45 -R 0 -P 0"
+
+    respawn="false" output="screen" /> 
+
+
+</group>
+
+<!--
+<group ns="robot45">
+<node
+    name="bin_2_02"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find bin_2)/urdf/bin_2.urdf -urdf -model bin_2_02 -x 14.7 -y 9.6 -z 0.05 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" /> 
+</group>
+-->
+
+<group ns="robot46">
+<node
+    name="rack_02"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find rack)/urdf/rack.urdf -urdf -model rack_02 -x 20 -y 3 -z 0.05 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group>
+
+<!--
+<group ns="robot47">
+<node
+    name="workbrench09"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find Work_brench)/urdf/Work_brench.urdf -urdf -model work_brench_09 -x 16.7 -y -1.7 -z 0.1 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group> 
+-->
+
+
+<!--
+<group ns="robot49">
+<node
+    name="floor_feature_2"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find floor_feature_6)/urdf/floor_feature_6.urdf -urdf -model floor_feature_2 -x 18 -y 2.5 -z 0.1 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group>
+-->
+
+<!--
+<group ns="robot50">
+<node
+    name="floor_feature_3"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find floor_feature_4)/urdf/floor_feature_4.urdf -urdf -model floor_feature_3 -x 5 -y -2 -z 0.05 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group>
+-->
+
+<group ns="robot51">
+<node
+    name="incline_plane"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find incline_plane)/urdf/incline_plane.urdf -urdf -model incline_plane -x 6.5 -y 5.5 -z 0.1 -Y 0 -R 0 -P 0"
+    respawn="false" output="screen" />
+</group>
+
+
+</launch>
