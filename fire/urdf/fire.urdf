@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="fire">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00260952513998855 -0.000176593107475975 0.248165822181797"
+        rpy="0 0 0" />
+      <mass
+        value="9.55341234344853" />
+      <inertia
+        ixx="0.163635691089763"
+        ixy="-3.28300986719657E-07"
+        ixz="0.000347916491321514"
+        iyy="0.164005162403854"
+        iyz="5.10926102611648E-07"
+        izz="0.0265299445948828" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fire/meshes/base_link.dae" />
+<material>
+            <script>
+ 		<uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Sand_Floor</name>
+            </script>
+          </material>
+
+      </geometry>
+
+
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://fire/meshes/base_link.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+
+<gazebo reference="base_link">
+    <material>Gazebo/Red</material>
+</gazebo>
+
+<gazebo>
+    <static>true</static>
+</gazebo>
+
+</robot>

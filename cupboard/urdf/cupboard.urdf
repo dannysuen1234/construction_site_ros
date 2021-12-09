@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="cupboard">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.551482048717747 0.250370385748333 0.855403453472327"
+        rpy="0 0 0" />
+      <mass
+        value="119.71837825227" />
+      <inertia
+        ixx="33.0658107849646"
+        ixy="-0.120528329296794"
+        ixz="-0.00658392685330594"
+        iyy="45.8587756172766"
+        iyz="0.0156780626160026"
+        izz="20.564793862081" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cupboard/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cupboard/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+<gazebo>
+    <static>true</static>
+</gazebo>
+
+
+<gazebo reference="base_link">
+    <material>cupboard</material>
+</gazebo>
+</robot>

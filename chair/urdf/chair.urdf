@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="chair">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.284098242210543 0.323491728700647 0.415785469260467"
+        rpy="0 0 0" />
+      <mass
+        value="2.33993141247843" />
+      <inertia
+        ixx="0.0623959406061311"
+        ixy="-0.00146115853809639"
+        ixz="-0.00285533713300134"
+        iyy="0.0510262546489191"
+        iyz="-0.0129296080477876"
+        izz="0.0721534225457795" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chair/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.556862745098039 1 0.505882352941176 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chair/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+<gazebo reference="base_link">
+    <material>Gazebo/FlatBlack</material>
+</gazebo>
+
+<gazebo>
+    <static>true</static>
+</gazebo>
+
+</robot>

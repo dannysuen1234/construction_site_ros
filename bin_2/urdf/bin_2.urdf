@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="bin_2">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-4.30211422042248E-16 6.41847686111419E-16 0.0428580947099156"
+        rpy="0 0 0" />
+      <mass
+        value="0.0415176276226125" />
+      <inertia
+        ixx="2.56225187777418E-05"
+        ixy="6.29844943154774E-18"
+        ixz="8.30684542742714E-19"
+        iyy="2.56380729804789E-05"
+        iyz="-2.87848847228459E-17"
+        izz="2.28116085233323E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bin_2/meshes/base_link.STL" scale="5 5 5"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bin_2/meshes/base_link.STL" scale="5 5 5"/>
+      </geometry>
+    </collision>
+  </link>
+
+<gazebo reference="base_link">
+    <material>Gazebo/Red</material>
+</gazebo>
+
+<gazebo>
+    <static>true</static>
+</gazebo>
+</robot>
