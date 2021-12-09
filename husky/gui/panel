@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source /home/vtl/catkin_ws/devel/setup.bash
+
+
+python construction_site_panel.py
+sleep 5
